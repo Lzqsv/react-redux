@@ -1,11 +1,23 @@
+import React, { Component } from 'react'
+import Count from './components/Count.js'
+import {connect} from 'react-redux'
 
-import SetName from './components/setName.js'
-function App() {
-  return (
-    <div className="App">
-      <SetName/>
-    </div>
-  );
+class App extends Component {
+  componentDidMount() {
+
+  }
+  render() {
+    
+    return (
+      <div className="App">
+        <Count />
+      </div>
+
+    );
+  }
+
 }
-
-export default App;
+const mapState = state => {
+  return {...state}
+}
+export default connect(mapState)(App) ;

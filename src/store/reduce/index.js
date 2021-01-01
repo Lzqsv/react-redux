@@ -1,14 +1,24 @@
  let defaultState ={
-     name:'lizhaungzhuang'
+     count:0
  }
 
  function reduce(state=defaultState ,action){
 
     switch(action.type){
-        case 'SET_NAME' :
+        case 'ADD' :
+            state.count++
         return{
             ...state,
-            name:action.name
-        }
+            count:state.count
+        };
+        case 'SUB':
+            state.count--
+        return{
+            ...state,
+            count:state.count
+        };
     }
+    return state 
  }
+
+ export default reduce
